@@ -1,4 +1,18 @@
-export default function Sidebar() {
+import SidebarSuggestions from "./SidebarSuggestions"
+
+export default function Sidebar(props) {
+    const sidebarSuggestions = [
+        { logo: "img/badvibesmemes 1.svg", name: 'bad.vibes.memes', status: 'Segue você' },
+        { logo: "img/chibirdart 1.svg", name: 'chibirdart', status: 'Segue você' },
+        { logo: "img/razoesparaacreditar 1.svg", name: 'razoesparaacreditar', status: 'Novo no Instagram' },
+        { logo: "img/adorableanimals 1.svg", name: 'adorable_animals', status: 'Segue você' },
+        { logo: "img/smallcutecats 1.svg", name: 'smallcutecats', status: 'Segue você' }
+    ]
+
+    const sidebarSuggestionsJSX = sidebarSuggestions.map((suggestion) => {
+        return <SidebarSuggestions logo={suggestion.logo} name={suggestion.name} status={suggestion.status} />
+    })
+
     return (
         <div class="sidecontent">
             <div class="s1">
@@ -25,87 +39,7 @@ export default function Sidebar() {
                         </a>
                     </div>
                 </div>
-                <div class="s2-2">
-                    <a href="https://www.instagram.com/">
-                        <div class="s2-2-1">
-                            <img alt="" src="img/badvibesmemes 1.svg" />
-                            <div>
-                                <h1>bad.vibes.memes</h1>
-                                <h2>Segue você</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="s2-2-2">
-                        <a href="https://www.instagram.com/">
-                            <h3>Seguir</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="s2-2">
-                    <a href="https://www.instagram.com/">
-                        <div class="s2-2-1">
-                            <img alt="" src="img/chibirdart 1.svg" />
-                            <div>
-                                <h1>chibirdart</h1>
-                                <h2>Segue você</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="s2-2-2">
-                        <a href="https://www.instagram.com/">
-                            <h3>Seguir</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="s2-2">
-                    <a href="https://www.instagram.com/">
-                        <div class="s2-2-1">
-                            <img alt="" src="img/razoesparaacreditar 1.svg" />
-                            <div>
-                                <h1>razoesparaacreditar</h1>
-                                <h2>Novo no Instagram</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="s2-2-2">
-                        <a href="https://www.instagram.com/">
-                            <h3>Seguir</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="s2-2">
-                    <a href="https://www.instagram.com/">
-                        <div class="s2-2-1">
-                            <img alt="" src="img/adorableanimals 1.svg" />
-                            <div>
-                                <h1>adorable_animals</h1>
-                                <h2>Segue você</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="s2-2-2">
-                        <a href="https://www.instagram.com/">
-                            <h3>Seguir</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="s2-2">
-                    <a href="https://www.instagram.com/">
-                        <div class="s2-2-1">
-                            <img alt="" src="img/smallcutecats 1.svg" />
-                            <div>
-                                <h1>smallcutecats</h1>
-                                <h2>Segue você</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="s2-2-2">
-                        <a href="https://www.instagram.com/">
-                            <h3>Seguir</h3>
-                        </a>
-                    </div>
-                </div>
-
+                {sidebarSuggestionsJSX}
             </div>
             <div class="s3">
                 <p>

@@ -1,11 +1,23 @@
-export default function Footer() {
+import FooterIcons from "./FooterIcons"
+
+export default function Footer(props) {
+    const footerIcons = [
+        { iconName: 'home' },
+        { iconName: 'search-outline' },
+        { iconName: 'add-circle-outline' },
+        { iconName: 'heart-outline' },
+        { iconName: 'person-outline' }
+    ]
+
+    const footerIconsJSX = footerIcons.map((icon) => {
+        return <FooterIcons iconName={icon.iconName} />
+    })
+
     return (
-        <div class="fbtns">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
-        </div>
+        <footer>
+            <div className="fbtns">
+                {footerIconsJSX}
+            </div>
+        </footer>
     )
 }

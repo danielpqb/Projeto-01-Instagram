@@ -18,9 +18,8 @@ export default function App() {
                 </div>
                 <Sidebar />
             </main>
-            <footer>
-                <Footer />
-            </footer>
+
+            <Footer />
         </div>
     )
 }
