@@ -1,10 +1,13 @@
+import React from "react"
+
 export default function Post(props) {
+    const [isLiked, setIsLiked] = React.useState('heart-outline')
     return (
         <div class="content">
             <div class="c1">
                 <div class="c1-1">
                     <img alt="" src={props.ownerLogoSrc} />
-                    <div>meowed</div>
+                    <div>{props.ownerName}</div>
                 </div>
                 <div class="c1-2">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -16,13 +19,13 @@ export default function Post(props) {
             <div class="c2">
                 <div class="c2-1">
                     <div class="c2-1-1">
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name={isLiked} onClick={() => { setIsLiked(isLiked === 'heart' ? 'heart-outline' : 'heart') }}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div class="c2-1-2">
                         <img alt="" src={props.likerLogoSrc} />
-                        <p>Curtido por <strong>{props.likerName}</strong> e <strong>outras 101.523 pessoas</strong></p>
+                        <p>Curtido por <strong>{props.likerName}</strong> e <strong>outras {props.likes} pessoas</strong></p>
                     </div>
                 </div>
                 <div class="c2-2">

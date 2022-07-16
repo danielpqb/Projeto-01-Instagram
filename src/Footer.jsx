@@ -1,6 +1,10 @@
-import FooterIcons from "./FooterIcons"
+export default function Footer() {
+    function FooterIcons(props) {
+        return (
+            <ion-icon name={props.iconName} ></ion-icon>
+        )
+    }
 
-export default function Footer(props) {
     const footerIcons = [
         { iconName: 'home' },
         { iconName: 'search-outline' },
@@ -9,14 +13,10 @@ export default function Footer(props) {
         { iconName: 'person-outline' }
     ]
 
-    const footerIconsJSX = footerIcons.map((icon) => {
-        return <FooterIcons iconName={icon.iconName} />
-    })
-
     return (
         <footer>
             <div className="fbtns">
-                {footerIconsJSX}
+                {footerIcons.map((icon) => { return <FooterIcons iconName={icon.iconName} /> })}
             </div>
         </footer>
     )

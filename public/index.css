@@ -404,6 +404,10 @@ footer {
     align-items: center;
 }
 
+ion-icon[name=heart] {
+    color: red;
+}
+
 @media (max-width: 935px) {
     .sidecontent {
         display: none;

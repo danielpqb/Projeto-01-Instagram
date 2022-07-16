@@ -1,6 +1,4 @@
-import SidebarSuggestions from "./SidebarSuggestions"
-
-export default function Sidebar(props) {
+export default function Sidebar() {
     const sidebarSuggestions = [
         { logo: "img/badvibesmemes 1.svg", name: 'bad.vibes.memes', status: 'Segue você' },
         { logo: "img/chibirdart 1.svg", name: 'chibirdart', status: 'Segue você' },
@@ -50,6 +48,27 @@ export default function Sidebar(props) {
                 <p>
                     © 2021 INSTAGRAM DO FACEBOOK
                 </p>
+            </div>
+        </div>
+    )
+}
+
+function SidebarSuggestions(props) {
+    return (
+        <div class="s2-2">
+            <a href="https://www.instagram.com/">
+                <div class="s2-2-1">
+                    <img alt="" src={props.logo} />
+                    <div>
+                        <h1>{props.name}</h1>
+                        <h2>{props.status}</h2>
+                    </div>
+                </div>
+            </a>
+            <div class="s2-2-2">
+                <a href="https://www.instagram.com/">
+                    <h3>Seguir</h3>
+                </a>
             </div>
         </div>
     )
