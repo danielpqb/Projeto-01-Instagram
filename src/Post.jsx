@@ -2,6 +2,7 @@ import React from "react"
 
 export default function Post(props) {
     const [isLiked, setIsLiked] = React.useState('heart-outline')
+    const [likeAnimation, setLikeAnimation] = React.useState('hidden')
     return (
         <div class="content">
             <div class="c1">
@@ -14,12 +15,19 @@ export default function Post(props) {
                 </div>
             </div>
             <div class="c3">
-                <img alt="" src={props.photoSrc} />
+                <img alt="" src={props.photoSrc} onClick={() => {
+                    setIsLiked('heart')
+                    setLikeAnimation((likeAnimation === 'hidden' || likeAnimation === 'animateHeart2') ? 'animateHeart' : 'animateHeart2')
+                }} />
+                <div className={likeAnimation}><ion-icon name='heart' ></ion-icon></div>
             </div>
             <div class="c2">
                 <div class="c2-1">
                     <div class="c2-1-1">
-                        <ion-icon name={isLiked} onClick={() => { setIsLiked(isLiked === 'heart' ? 'heart-outline' : 'heart') }}></ion-icon>
+                        <ion-icon name={isLiked} onClick={() => {
+                            setIsLiked(isLiked === 'heart' ? 'heart-outline' : 'heart')
+                            setLikeAnimation('hidden')
+                        }}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
