@@ -13,19 +13,7 @@ export default function Sidebar() {
 
     return (
         <div class="sidecontent">
-            <div class="s1">
-                <a href="https://www.instagram.com/">
-                    <div class="s1-1">
-                        <img alt="" src="img/catanacomics 1.svg" />
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/">
-                    <div class="s1-2">
-                        <h1><strong>catanacomics</strong></h1>
-                        <h2>Catana</h2>
-                    </div>
-                </a>
-            </div>
+            <User src="img/catanacomics 1.svg" userName='catanacomics' name='Catana' />
             <div class="s2">
                 <div class="s2-1">
                     <div>
@@ -70,6 +58,24 @@ function SidebarSuggestions(props) {
                     <h3>Seguir</h3>
                 </a>
             </div>
+        </div>
+    )
+}
+
+function User(props) {
+    return (
+        <div class="s1">
+            <a href="https://www.instagram.com/">
+                <div class="s1-1">
+                    <img alt="" src={props.src} />
+                </div>
+            </a>
+            <a href="https://www.instagram.com/">
+                <div class="s1-2">
+                    <h1><strong>{props.userName}</strong></h1>
+                    <h2>{props.name}</h2>
+                </div>
+            </a>
         </div>
     )
 }
